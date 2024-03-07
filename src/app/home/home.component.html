@@ -1,0 +1,15 @@
+<div class="row mt-3">
+    <div class="col-md-6">
+        <form class="form-inline">
+            <div class="form-group">
+                <!--<label for="">Tìm sản phẩm</label> -->
+                <input type="text"size="50"[(ngModel)]="searching"(ngModelChange)="filterResults()"name="searching"id=""class="input form-control"placeholder=""placeholder="Tìm sản phẩm" mall>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-6 text-right">
+        <!-- Button trigger modal -->
+        
+    </div>
+</div>
+<app-products [productHome]="filterProductList"></app-products>

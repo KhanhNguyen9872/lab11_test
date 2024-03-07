@@ -1,0 +1,37 @@
+<div class="container">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+        <!--Brand -->
+        <a class="navbar-brand"href="#">
+            <img class="brand-logo"src="/assets/images/logo.svg"alt="logo"aria-hidden="true" height="25px">
+        </a>
+		<ul class="navbar-nav">
+			<li class="nav-item active">
+			<a class="nav-link"routerLink="/">Home</a>
+			</li>
+			<li class="nav-item active">
+			<a class="nav-link"routerLink="/list">Product list</a>
+			</li>
+		</ul>
+		<ul class="navbar-nav ml-auto ">
+			<li class="nav-item active">
+				<a class="nav-link" routerLink="/cart/1"href="#">My Cart</a>
+			</li>
+			<ng-container *ngIf="!isAuthenticated()">
+				<li class="nav-item active">
+					<a class="nav-link"routerLink="/login"href="#">Login</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link"routerLink="/register"href="#">Register</a>
+				</li>
+			</ng-container>
+			<ng-container *ngIf="isAuthenticated()">
+				<li class="nav-item active">
+					<a class="nav-link"(click)="logout()"routerLink="/Logout"href="#">Logout</a>
+				</li>
+			</ng-container>
+		</ul>
+    </nav>
+    <router-outlet></router-outlet>
+    
+</div>
+

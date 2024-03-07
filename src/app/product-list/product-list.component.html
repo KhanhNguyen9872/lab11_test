@@ -1,0 +1,121 @@
+<div class="row mt-3">
+    <div class="col-md-6">
+        <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#modelId">
+            Add new
+        </button>
+    </div>
+</div>
+
+<div class="row mt-3 pl-3 pr-3">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Product</th>
+                <th>Code</th>
+                <th>Available</th>
+                <th>Price </th>
+                <th>5 Star Rating</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of productList; let i = index;">
+                <td scope="row">
+                    <img src="{{item.imageUrl}}" width="50px" alt="" srcset="">
+                </td>
+                <td><a routerLink="/product-details/{{item.id}}">{{item.productName}}</a></td>
+                <td>{{item.productCode}}</td>
+                <td>{{item.releaseDate}}</td>
+                <td>{{item.price}}</td>
+                <td>
+                    <app-star [Rating]="item.starRating" [nameRating]="item.productName"
+                        (outRating)="showRating($event)"></app-star>
+                </td>
+                <td class="text-center">
+                    <span class="btn btn-primary btn-sm mr-1" type="button" (click)="Edit(i);IsAdd=0;IsUpdate=2"
+                        data-toggle="modal" data-target="#modelId">Edit</span>
+                    <span class="btn btn-danger btn-sm" type="button" (click)="Delete(i)">Delete</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!--Modal-->
+<div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Product</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="formProduct">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">ProductName</label>
+                                <input type="text" [formControl]="formProduct.controls.productName" name="" id=""
+                                    class="form-control" placeholder="" aria-describedby="helpId">
+                                <!--<smallid="helpId"class="text-muted">Helptext</small>-->
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">ProductCode</label>
+                                <input type="text" [formControl]="formProduct.controls.productCode" name="" id=""
+                                    class="form-control" placeholder="" aria-describedby="helpId">
+                                <!--<smallid="helpId"class="text-muted">Helptext</small>-->
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Date</label>
+                                <input type="date" [formControl]="formProduct.controls.releaseDate" name="" id=""
+                                    class="form-control" placeholder="" aria-describedby="helpId">
+                                <!--<smallid="helpId"class="text-muted">Helptext</small>-->
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Price</label>
+                                <input type="number" [formControl]="formProduct.controls.price" name="" id=""
+                                    class="form-control" placeholder="" aria-describedby="helpId">
+                                <!--<smallid="helpId"class="text-muted">Helptext</small>-->
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="">description</label>
+                                <input type="text" [formControl]="formProduct.controls.description" name="" id=""
+                                    class="form-control" placeholder="" aria-describedby="helpId">
+                                <!--<smallid="helpId"class="text-muted">Helptext</small>-->
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">picture</label>
+                                <input type="file" (change)="onChange($event)" name="" id="" class="form-control"
+                                    placeholder="" aria-describedby="helpId">
+                                <input type="text" [formControl]="formProduct.controls.imageUrl" name="" value="">
+                                <!--<smallid="helpId"class="text-muted">Helptext</small>-->
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <img [src]="file" width="20%" alt="">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" *ngIf="IsAdd==1" (click)="Add()">Save</button>
+                <button type="button" class="btn btn-primary" *ngIf="IsUpdate==2" (click)="Update()">Save 1</button>
+                <button type="button" class="btn btn-secondary" (click)="IsAdd=1;IsUpdate=0"
+                    data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
