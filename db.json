@@ -1,28 +1,6 @@
 {
   "products": [
     {
-      "productId": 1,
-      "productName": "Leaf Rake",
-      "productCode": "GDN-0011",
-      "releaseDate": "2024-03-14",
-      "price": 19.928,
-      "description": "Leaf rake with 48-inch wooden handle.",
-      "starRating": 5,
-      "imageUrl": "./assets/images/Leaf-Rake.png",
-      "id": "1"
-    },
-    {
-      "id": "2",
-      "productName": "Garden Cart",
-      "productCode": "GDN-0023",
-      "releaseDate": "March 18, 2016",
-      "description": "15 gallon capacity rolling garden cart",
-      "price": 32.99,
-      "starRating": 4.2,
-      "inStock": 5,
-      "imageUrl": "./assets/images/garden-cart.png"
-    },
-    {
       "id": "3",
       "productName": "Hammer",
       "productCode": "TBX-0048",
@@ -67,15 +45,34 @@
       "imageUrl": "./assets/images/macbook.jpg"
     },
     {
-      "id": "9821",
-      "productId": 1,
-      "productName": "54543dsfs",
-      "productCode": "sfdsf",
+      "id": "2b75",
+      "productName": "hkjhkj",
+      "productCode": "",
       "releaseDate": "",
-      "price": 42543434324,
-      "description": "fcdxv",
+      "price": 0,
+      "description": "",
       "starRating": 5,
-      "imageUrl": "./assets/images/rejon-Hammer.png"
+      "imageUrl": ""
+    },
+    {
+      "id": "6c43",
+      "productName": "hkjhkjjhkjhjk",
+      "productCode": "",
+      "releaseDate": "",
+      "price": 0,
+      "description": "",
+      "starRating": 5,
+      "imageUrl": ""
+    },
+    {
+      "id": "7f6e",
+      "productName": "hkjhkjjhkjhjkkjkjk",
+      "productCode": "",
+      "releaseDate": "",
+      "price": 0,
+      "description": "",
+      "starRating": 5,
+      "imageUrl": ""
     }
   ]
 }

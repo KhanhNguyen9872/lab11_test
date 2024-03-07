@@ -21,15 +21,16 @@ constructor(
 this.cartList = cartService.getCartAll() 
 }
 ngOnInit(): void { 
-let id=Number(this.router.snapshot.params['id'])
+let id=this.router.snapshot.params['id']
  this.productService.getproductId(id).subscribe(data=>{
   this.productDetail =data
  })
 this.InStock = this.productDetail?.inStock!
 }
 Add() {
-  this.cartService.addCart(this.productDetail?.id!, this.productDetail)
+  this.cartService.addCart(Number(this.productDetail?.id!), this.productDetail)
     this.InStock = this.cartService.getInStock(this.productDetail?.id!)!
+    this.ngOnInit()
 }
 ItemCount() { return this.cartService.totalItems() }
 ItemSum() { return this.cartService.Total() }

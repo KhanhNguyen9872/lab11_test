@@ -12,7 +12,6 @@ import { ProductsComponent } from './products/products.component';
 import { CartComponent } from './cart/cart.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
-import { ListComponent } from './list/list.component';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -26,7 +25,6 @@ import { HttpClientModule } from '@angular/common/http';
     CartComponent,
     LoginComponent,
     RegisterComponent,
-    ListComponent,
   ],
   imports: [
     BrowserModule,

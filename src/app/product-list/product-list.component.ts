@@ -14,7 +14,6 @@ export class ProductListComponent {
     alert(`${event}`)
   }
   formProduct = new FormGroup({
-    productId: new FormControl<number>(1),
     productName: new FormControl<string>(''),
     productCode: new FormControl<string>(''),
     releaseDate: new FormControl<string>(''),
@@ -51,7 +50,7 @@ export class ProductListComponent {
     
   }
   Edit(index: number) {
-    this.id = this.productList[index].id
+    this.id = Number(this.productList[index].id)
     
     this.formProduct.controls['productName'].setValue(this.productList[index].productName)
     this.formProduct.controls['productCode'].setValue(this.productList[index].productCode)

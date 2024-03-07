@@ -10,6 +10,8 @@ export class CartService {
   constructor(private prod:ProductService) { }
   getCartAll(){
     return this.cartList
+    console.log(this.cartList);
+    
   }
   getInStock(id:number){
     return this.cartList.find(i=>i.Id==id)?.inStock
@@ -19,7 +21,7 @@ export class CartService {
     let isItemInCart=itemInCart.length>0
     if(isItemInCart==false){
       let id= this.cartList.push({
-        "Id":frmProduct.id,
+        "Id":parseInt(frmProduct.id),
         "Name":frmProduct.productName,
         'Code':frmProduct.productCode,
         'Des':frmProduct.description,
