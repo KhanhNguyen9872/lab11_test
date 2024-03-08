@@ -20,7 +20,8 @@ export class ProductListComponent {
     price: new FormControl<number>(0),
     description: new FormControl<string>(''),
     starRating: new FormControl<number>(5),
-    imageUrl: new FormControl<string>('')
+    imageUrl: new FormControl<string>(''),
+    inStock: new FormControl<number>(1)
   })
   file: string = ''
   IsAdd: number = 1
@@ -50,7 +51,7 @@ export class ProductListComponent {
     
   }
   Edit(index: number) {
-    this.id = Number(this.productList[index].id)
+    this.id = this.productList[index].id
     
     this.formProduct.controls['productName'].setValue(this.productList[index].productName)
     this.formProduct.controls['productCode'].setValue(this.productList[index].productCode)
@@ -62,6 +63,7 @@ export class ProductListComponent {
     this.file = this.productList[index].imageUrl
   }
   Update() {
+	this.formProduct.controls['imageUrl'].setValue(this.file)
     this.prod.UpdateProduct(this.id, this.formProduct.value).subscribe(res => {
       this.ngOnInit()
     })

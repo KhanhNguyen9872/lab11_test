@@ -12,6 +12,7 @@ export class ProductDetailsComponent implements OnInit {
   productDetail: Product | undefined
   constructor(private router:ActivatedRoute, private prod: ProductService){ }
   ngOnInit(): void {
+	
       let id = parseInt(this.router.snapshot.params['id'])
       this.prod.getproductId(id).subscribe(data=>{
         this.productDetail = data

@@ -1,15 +1,14 @@
 {
   "products": [
     {
-      "id": "3",
       "productName": "Hammer",
       "productCode": "TBX-0048",
       "releaseDate": "May 21, 2016",
-      "description": "Curved claw steel hammer",
       "price": 8.9,
-      "starRating": 4.8,
-      "inStock": 5,
-      "imageUrl": "./assets/images/rejon-Hammer.png"
+      "description": "Curved claw steel hammer",
+      "starRating": 5,
+      "imageUrl": "./assets/images/Leaf-Rake.png",
+      "id": "3"
     },
     {
       "productId": 1,
@@ -23,15 +22,14 @@
       "id": "4"
     },
     {
-      "id": "5",
       "productName": "Video Game Controller",
       "productCode": "GMG-0042",
       "releaseDate": "October 15, 2015",
-      "description": "Standard two-button video game controller",
       "price": 35.95,
-      "starRating": 4.6,
-      "inStock": 5,
-      "imageUrl": "./assets/images/xbox-controller.png"
+      "description": "Standard two-button video game controller",
+      "starRating": 5,
+      "imageUrl": "./assets/images/rejon-Hammer.png",
+      "id": "5"
     },
     {
       "id": "6",
@@ -45,34 +43,25 @@
       "imageUrl": "./assets/images/macbook.jpg"
     },
     {
-      "id": "2b75",
-      "productName": "hkjhkj",
+      "productName": "fsdsd",
       "productCode": "",
       "releaseDate": "",
       "price": 0,
       "description": "",
       "starRating": 5,
-      "imageUrl": ""
+      "imageUrl": "./assets/images/xbox-controller.png",
+      "id": "6e10"
     },
     {
-      "id": "6c43",
-      "productName": "hkjhkjjhkjhjk",
+      "id": "bf60",
+      "productName": "sdsdds",
       "productCode": "",
       "releaseDate": "",
       "price": 0,
       "description": "",
       "starRating": 5,
-      "imageUrl": ""
-    },
-    {
-      "id": "7f6e",
-      "productName": "hkjhkjjhkjhjkkjkjk",
-      "productCode": "",
-      "releaseDate": "",
-      "price": 0,
-      "description": "",
-      "starRating": 5,
-      "imageUrl": ""
+      "imageUrl": "",
+      "inStock": 10
     }
   ]
 }

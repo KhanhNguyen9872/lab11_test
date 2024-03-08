@@ -12,7 +12,7 @@ import { CartService } from '../cart.service';
 export class CartComponent implements OnInit{
 	productDetail: Product | undefined
 	cartList: Cart[] = []
-	InStock: number = 0
+	InStock: number = 1
 constructor(
     private router: ActivatedRoute, 
     private productService: ProductService, 
@@ -25,17 +25,18 @@ let id=this.router.snapshot.params['id']
  this.productService.getproductId(id).subscribe(data=>{
   this.productDetail =data
  })
-this.InStock = this.productDetail?.inStock!
+console.log(this.InStock);
+
 }
 Add() {
   this.cartService.addCart(Number(this.productDetail?.id!), this.productDetail)
-    this.InStock = this.cartService.getInStock(this.productDetail?.id!)!
+    this.InStock
     this.ngOnInit()
 }
 ItemCount() { return this.cartService.totalItems() }
 ItemSum() { return this.cartService.Total() }
 Remove(index: number) { 
-  this.InStock=this.cartService.getInStock(this.productDetail?.id!)!
+  
   this.cartService.RemoveCart(index) }
 DeleteAll() { this.cartService.DeleteAllCart() }
 }

@@ -5,23 +5,24 @@ import { Cart } from './cart';
   providedIn: 'root'
 })
 export class CartService {
-  inStock?: number
+  inStock :number =0
   cartList:Cart[]=[]
-  constructor(private prod:ProductService) { }
+  constructor(private prod:ProductService) { 
+  }
   getCartAll(){
     return this.cartList
     console.log(this.cartList);
     
   }
-  getInStock(id:number){
-    return this.cartList.find(i=>i.Id==id)?.inStock
+  getInStock(index:number){
+    return this.cartList.filter(i=>i.Id==index)
   }
   addCart(index:number,frmProduct:any){
     let itemInCart = this.cartList.filter(i=>i.Id==index)
     let isItemInCart=itemInCart.length>0
     if(isItemInCart==false){
       let id= this.cartList.push({
-        "Id":parseInt(frmProduct.id),
+        "Id":frmProduct.id,
         "Name":frmProduct.productName,
         'Code':frmProduct.productCode,
         'Des':frmProduct.description,
